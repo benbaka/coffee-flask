@@ -1,6 +1,4 @@
-from flask_script import Manager
-#from flask.ext.script import Manager
-
+from flask.ext.script import Manager
 from sched.app import app
 
 manager = Manager(app)
