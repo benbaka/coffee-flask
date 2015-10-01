@@ -1,6 +1,10 @@
 from flask import Flask, render_template
 from flask import request
+from flask.ext.bootstrap import Bootstrap
+
 app = Flask(__name__)
+
+bootstrap = Bootstrap(app)
 
 @app.route("/")
 def hello():
@@ -16,7 +20,7 @@ def luck_processor():
 
 @app.route('/user/<name>')
 def user(name):
-    return "<h1>Hello, %s!</h1>" % name
+    return render_template('user.html',name= name)
 
 @app.route('/index')
 def index():
